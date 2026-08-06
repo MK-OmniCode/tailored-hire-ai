@@ -112,28 +112,15 @@ function Index() {
             </div>
 
             <div className="space-y-2">
-              <label htmlFor="job" className="text-sm font-medium text-foreground">
-                2. The job you're applying for
-              </label>
-              <Textarea
-                id="job"
-                value={job}
-                onChange={(e) => setJob(e.target.value)}
-                placeholder="Paste the job posting, or just write the role and company…"
-                className="min-h-28 resize-y text-sm"
-              />
-            </div>
-
-            <div className="space-y-2">
               <label htmlFor="resume" className="text-sm font-medium text-foreground">
-                3. A bit about you
+                2. Your resume / CV
               </label>
               <Textarea
                 id="resume"
                 value={resume}
                 onChange={(e) => setResume(e.target.value)}
-                placeholder="Paste your resume, or a few lines about your experience and skills…"
-                className="min-h-28 resize-y text-sm"
+                placeholder="Paste your resume, CV, or a few lines about your experience and skills…"
+                className="min-h-32 resize-y text-sm"
               />
               <button
                 type="button"
@@ -142,6 +129,19 @@ function Index() {
               >
                 <Lightbulb className="size-3.5" /> Fill in an example
               </button>
+            </div>
+
+            <div className="space-y-2">
+              <label htmlFor="job" className="text-sm font-medium text-foreground">
+                3. The job you want
+              </label>
+              <Textarea
+                id="job"
+                value={job}
+                onChange={(e) => setJob(e.target.value)}
+                placeholder="Paste the job posting, or just write the role and company…"
+                className="min-h-32 resize-y text-sm"
+              />
             </div>
 
             <div className="flex flex-wrap items-center gap-2 border-t border-border pt-5">
