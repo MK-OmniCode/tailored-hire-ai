@@ -89,7 +89,7 @@ function Index() {
             Your cover letter, in one click
           </h1>
           <p className="mx-auto mt-4 max-w-xl text-lg opacity-90">
-            Tell us your name, paste the job you want — we write the letter and show
+            Enter your name, paste your resume and the job you want — we write the letter and show
             which keywords you match.
           </p>
         </div>
