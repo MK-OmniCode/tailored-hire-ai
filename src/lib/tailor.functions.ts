@@ -53,7 +53,7 @@ export const tailorApplication = createServerFn({ method: "POST" })
           },
           {
             role: "user",
-            content: `Desired tone: ${data.tone}\n\n=== RESUME ===\n${data.resume}\n\n=== JOB POSTING ===\n${data.job}`,
+            content: `Applicant name: ${data.name || "the applicant"}\nDesired tone: ${data.tone}\n\n=== RESUME / BACKGROUND ===\n${data.resume}\n\n=== JOB POSTING ===\n${data.job}\n\nIf the background is short, still write a complete, confident cover letter using only what is given. Sign off with the applicant's name.`,
           },
         ],
         response_format: {
