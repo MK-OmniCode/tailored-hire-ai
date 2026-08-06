@@ -2,10 +2,12 @@ import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 
 const Input = z.object({
-  resume: z.string().min(20),
-  job: z.string().min(20),
+  name: z.string().default(""),
+  resume: z.string().min(1),
+  job: z.string().min(1),
   tone: z.string().default("professional"),
 });
+
 
 export type TailorResult = {
   coverLetter: string;
@@ -51,7 +53,7 @@ export const tailorApplication = createServerFn({ method: "POST" })
           },
           {
             role: "user",
-            content: `Desired tone: ${data.tone}\n\n=== RESUME ===\n${data.resume}\n\n=== JOB POSTING ===\n${data.job}`,
+            content: `Applicant name: ${data.name || "the applicant"}\nDesired tone: ${data.tone}\n\n=== RESUME / BACKGROUND ===\n${data.resume}\n\n=== JOB POSTING ===\n${data.job}\n\nIf the background is short, still write a complete, confident cover letter using only what is given. Sign off with the applicant's name.`,
           },
         ],
         response_format: {
