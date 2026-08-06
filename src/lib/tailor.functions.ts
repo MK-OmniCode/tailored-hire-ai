@@ -2,10 +2,12 @@ import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 
 const Input = z.object({
-  resume: z.string().min(20),
-  job: z.string().min(20),
+  name: z.string().default(""),
+  resume: z.string().min(1),
+  job: z.string().min(1),
   tone: z.string().default("professional"),
 });
+
 
 export type TailorResult = {
   coverLetter: string;
