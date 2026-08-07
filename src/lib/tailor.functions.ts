@@ -1,5 +1,8 @@
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
+import { parseTailorResult, type TailorResult } from "./tailor-result";
+
+export type { TailorResult } from "./tailor-result";
 
 const Input = z.object({
   name: z.string().default(""),
@@ -7,15 +10,6 @@ const Input = z.object({
   job: z.string().min(1),
   tone: z.string().default("professional"),
 });
-
-
-export type TailorResult = {
-  coverLetter: string;
-  matchScore: number;
-  matchedKeywords: string[];
-  missingKeywords: string[];
-  tips: string[];
-};
 
 const schema = {
   type: "OBJECT",
@@ -75,12 +69,5 @@ export const tailorApplication = createServerFn({ method: "POST" })
       candidates?: Array<{ content?: { parts?: Array<{ text?: string }> } }>;
     };
     const content = json.candidates?.[0]?.content?.parts?.[0]?.text ?? "";
-    const parsed = JSON.parse(content) as TailorResult;
-    return {
-      coverLetter: parsed.coverLetter ?? "",
-      matchScore: Math.max(0, Math.min(100, Math.round(parsed.matchScore ?? 0))),
-      matchedKeywords: parsed.matchedKeywords ?? [],
-      missingKeywords: parsed.missingKeywords ?? [],
-      tips: parsed.tips ?? [],
-    };
+    return parseTailorResult(content);
   });

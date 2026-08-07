@@ -187,11 +187,7 @@ function Index() {
                     New
                   </Button>
                   <Button size="sm" variant="outline" onClick={copy}>
-                    {copied ? (
-                      <Check className="mr-2 size-4" />
-                    ) : (
-                      <Copy className="mr-2 size-4" />
-                    )}
+                    {copied ? <Check className="mr-2 size-4" /> : <Copy className="mr-2 size-4" />}
                     Copy
                   </Button>
                 </div>
