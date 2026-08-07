@@ -1,26 +1,22 @@
 # Tailored Hire AI
 
-AI Job Application Assistant — paste a resume + job posting, get a tailored cover letter and matched keywords. Recruiters love seeing this since it solves their own pain point.
+AI Job Application Assistant — paste a resume and a job posting, get a tailored cover letter, keyword match score, and actionable resume tips.
 
-use gemeini  api key for ai
-
-This project was built with [Lovable](https://lovable.dev).
-
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/545f42fa-929d-41e8-9553-a41ee475135a).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+Powered by the Google Gemini API. Set a `GEMINI_API_KEY` environment variable to enable the AI features.
 
 ## Development
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+Requires Node.js and npm.
 
 ```sh
-git clone <this-repository-url>
-cd <repository-name>
+git clone https://github.com/MK-OmniCode/tailored-hire-ai.git
+cd tailored-hire-ai
 npm i
 npm run dev
 ```
+
+## Deployment
+
+This project deploys to Vercel with the Nitro/Vercel preset. Add `GEMINI_API_KEY` to your Vercel project's environment variables.
+
+Built by [Kashif](https://github.com/MK-OmniCode).

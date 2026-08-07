@@ -255,6 +255,10 @@ function Index() {
           </section>
         )}
       </main>
+
+      <footer className="mx-auto max-w-3xl px-6 pb-8 text-center text-sm text-muted-foreground">
+        Built by <span className="font-medium text-foreground">Kashif</span>
+      </footer>
     </div>
   );
 }
